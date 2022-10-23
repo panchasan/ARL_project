@@ -1,0 +1,9 @@
+repositories:
+  tello_ros:
+    type: git
+    url: https://github.com/clydemcqueen/tello_ros.git
+    version: master
+  ros2_shared:
+    type: git
+    url: https://github.com/ptrmu/ros2_shared.git
+    version: master
