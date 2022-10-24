@@ -10,7 +10,8 @@
 build/
 install/
 log/
-/src/
+/src/ros2_shared
+/src/tello_ros
 
 # Python
 *.pyc
