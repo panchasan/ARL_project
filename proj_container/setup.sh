@@ -1,6 +1,5 @@
 sudo apt-get update
 
-sudo apt-get -y install terminator
 sudo apt-get -y install libasio-dev
 
 rosdep update
