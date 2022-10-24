@@ -16,6 +16,7 @@ git clone https://github.com/panchasan/ARL_project.git
 Build docker image from delivered Dockerfile
 
 ```
+cd ARL_project/
 docker build --pull --no-cache --tag tello_ros:foxy .
 ```
 
