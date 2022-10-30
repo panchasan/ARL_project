@@ -4,7 +4,7 @@ sudo apt-get -y install terminator
 sudo apt-get -y install libasio-dev
 pip install numpy --upgrade
 pip install librosa
-
+sudo apt-get install python3-tk
 
 
 rosdep update
