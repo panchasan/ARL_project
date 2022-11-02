@@ -28,7 +28,7 @@ cd drone_ws
 
 Install dependencies & build workspace
 ```
-cd dron_ws
+cd drone_ws
 sudo apt-get update
 rosdep update
 vcs import src < drone.repos
