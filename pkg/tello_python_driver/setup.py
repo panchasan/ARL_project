@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'talker = tello_python_driver.control:main',
-            'position_control = tello_python_driver.control_opti:main'
+            'position_control = tello_python_driver.control:main',
+            'blind_control = tello_python_driver.control_opti:main'
         ],
     },
 )
