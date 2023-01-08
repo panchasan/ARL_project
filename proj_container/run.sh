@@ -3,4 +3,9 @@ rocker --network host --privileged --nvidia --x11 --user --name drone_ws \
 	--volume /dev/shm \
 	--volume $HOME/Studia/ARL-Retinger/drone_ws:$HOME/drone_ws \
 	--volume /opt/pycharm-community-2022.1.1:/opt/pycharm \
+	--volume /etc/alsa:/etc/alsa \
+    	--volume /usr/share/alsa:/usr/share/alsa \
+	--volume ~/.config/pulse:/.config/pulse \
+	--volume /run/user/$UID/pulse/native:/run/user/$UID/pulse/native \
+        --env "PULSE_SERVER=unix:/run/user/$UID/pulse/native" \
 	-- tello_ros:foxy
