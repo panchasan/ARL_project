@@ -9,7 +9,7 @@ from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry
 import time
 import numpy as np
-#import vlc
+import pygame
 
 
 class MinimalPublisher(Node):
@@ -41,9 +41,11 @@ class MinimalPublisher(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
         print("Let's go 😎️🤯️😵️")
+        pygame.mixer.init()
+        pygame.mixer.music.load("hp.mp3")
+        pygame.mixer.music.play()
 
-        #p = vlc.MediaPlayer("hp.mp3")
-        #p.play()
+
     def listener_callback(self, msg):
         
         self.x = msg.pose.pose.position.x
