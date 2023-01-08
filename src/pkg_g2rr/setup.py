@@ -1,6 +1,7 @@
 from setuptools import setup
 
-package_name = 'tello_python_driver'
+package_name = 'pkg_g2rr'
+submodules = 'pkg_g2rr/pygazebo'
 
 setup(
     name=package_name,
@@ -13,15 +14,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='chris',
-    maintainer_email='chris@todo.todo',
+    maintainer='u20',
+    maintainer_email='u20@todo.todo',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'talker = tello_python_driver.control:main',
-            'position_control = tello_python_driver.control_opti:main'
+        	'g2rr = pkg_g2rr.g2rr:main',
         ],
     },
 )

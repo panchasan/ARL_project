@@ -9,6 +9,7 @@ from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry
 import time
 import numpy as np
+#import vlc
 
 
 class MinimalPublisher(Node):
@@ -21,9 +22,7 @@ class MinimalPublisher(Node):
             self.listener_callback,
             10)
         self.publisher_parameters = self.create_publisher(Twist, '/drone1/cmd_vel', 10)
-        timer_period = 0.5  # seconds
-        self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.i = 0
+
 
         self.parameters = Twist()
 
@@ -34,7 +33,17 @@ class MinimalPublisher(Node):
         self.dest_z = 1.0
         self.Data = np.genfromtxt("traj.txt", dtype=float,
                         encoding=None, delimiter=",")
+        self.num_lines = 0
+        with open(r"traj.txt", 'r') as fp:
+            self.num_lines = len(fp.readlines())
+        timer_period = self.Data[self.num_lines-1][0]/self.num_lines  # seconds
+        print(timer_period)
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.i = 0
         print("Let's go 😎️🤯️😵️")
+
+        #p = vlc.MediaPlayer("hp.mp3")
+        #p.play()
     def listener_callback(self, msg):
         
         self.x = msg.pose.pose.position.x
@@ -80,15 +89,16 @@ class MinimalPublisher(Node):
         self.parameters.angular.y = 0.0
         self.parameters.angular.z = 0.0
     def timer_callback(self):
-        print('********************')
-        print('New data',self.Data[self.i])
-        print('********************')
-        self.dest_x=self.Data[self.i][1]
-        self.dest_y=self.Data[self.i][2]
-        self.dest_z=self.Data[self.i][3]
-        self.i=self.i+1
-        #print("WOOOOOOOOOHOOOOOOOOOOOOOOOOO")
-        #self.timer = self.create_timer(0.7, self.timer_callback)
+        if self.i < self.num_lines - 1:
+            print('********************')
+            print('New data',self.Data[self.i])
+            print('********************')
+            self.dest_x=self.Data[self.i][1]
+            self.dest_y=self.Data[self.i][2]
+            self.dest_z=self.Data[self.i][3]
+            self.i=self.i+1
+        else:
+            print("********NO NEW DATA********")
 
 
 
