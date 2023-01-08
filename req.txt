@@ -1,0 +1,6 @@
+
+pip install asyncio
+pip install google
+pip install --upgrade google-api-python-client
+pip install protobuf==3.20.3
+
