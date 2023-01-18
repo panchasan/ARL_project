@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'position_control = tello_python_driver.control:main',
-            'blind_control = tello_python_driver.control_opti:main'
+            'blind_control = tello_python_driver.control_opti:main',
+            'lab_test = tello_python_driver.lab_test:main'
         ],
     },
 )
