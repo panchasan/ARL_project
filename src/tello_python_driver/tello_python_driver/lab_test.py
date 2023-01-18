@@ -18,7 +18,7 @@ class MinimalPublisher(Node):
         super().__init__('minimal_publisher')
         self.subscription = self.create_subscription(
             Pose,
-            '/repeater/tello_1/pose/info',
+            'optitrack_topic',
             self.listener_callback,
             10)
         self.publisher_parameters = self.create_publisher(Twist, '/cmd_vel', 10)
