@@ -11,6 +11,7 @@ from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry
 import time
 import numpy as np
+import pygame
 # from ardrone_autonomy.msg import Navdata # for receiving navdata feedback
 
 
@@ -129,6 +130,11 @@ def main(args=None):
                         encoding=None, delimiter=",")
     minimal_publisher = MinimalPublisher()
     # minimal_publisher.goTo(50, 100, 0, 0.1)
+    
+    pygame.mixer.init()
+    pygame.mixer.music.load("hp.mp3")
+    pygame.mixer.music.play()
+
     for i in Data:
         print(i[0]/2, i[1]/2, i[2])
         minimal_publisher.goTo(i[0]/2, i[1]/2, 0.0, 0.1)
