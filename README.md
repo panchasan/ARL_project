@@ -1,4 +1,20 @@
 # ARL project
+## Purpose
+Welcome to our project on Autonomous Flying Robots. The goal of this project was to develop software using the Robot Operating System (ROS) and the librosa library that processes music file, the trajectory is generated based on a music file, and then executes that trajectory by the drone in sync with the music. The simulation was initially conducted in the Gazebo environment, and later on a real Tello drone. 
+Packge uses g2rr script that was shared to us and script for Optitrack. 
+
+
+### Input
+
+| Name         | Type                  | Description  |
+| ------------ | --------------------- | ------------ |
+| `optitrack_topic` | nav_msgs/Pose | Topic that gives us feedback about actual postion of a drone |
+
+### Output
+
+| Name         | Type                  | Description  |
+| ------------ | --------------------- | ------------ |
+| `/cmd_vel` | geometry_msgs/Twist  | Topic where orders are send |
 
 
 ### Dependencies
@@ -43,3 +59,11 @@ Every time the container is started with `run.sh` script, it should be followed 
 ```
 (foxy) user@machine:~/drone_ws (master #%)$
 ```
+
+## Run the simulation
+
+```
+po kolei uruchomienie 
+```
+
+
