@@ -36,7 +36,11 @@ rosdep install --from-paths src --ignore-src -yr
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 source install/setup.bash
 ```
-
+Running the demo:
+```
+source install/setup.bash
+ros2 launch tello_gazebo simple
+```
 ## Configuring the container
 Every time the container is started with `run.sh` script, it should be followed by `setup.sh` script. The terminal where the script was run will not have full functionality. Enter the container from the other terminal with `enter.sh` script. It will look as follows:
 
