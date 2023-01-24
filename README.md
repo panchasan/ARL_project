@@ -36,7 +36,7 @@ rosdep install --from-paths src --ignore-src -yr
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 source install/setup.bash
 ```
-#Running the demo
+## Running the demo
 First terminal:
 ```
 source install/setup.bash
