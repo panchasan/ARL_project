@@ -16,12 +16,12 @@ Repository is also responsible for music playing and synchronizing with the dron
 
 
 ### Generating trajectory details
-The trajectory is generated using the librosa library. Initially, a long list of basic trajectory sequences is generated using only the x and y coordinates. The sequence of basic trajectories is always random, but the same figure cannot appear next to each other. Among the basic trajectories are various geometric shapes such as rectangles, circles, eights, and segments of sine waves. Next, the times when the beats will appear are extracted. Then, using the local peak period (PLP), the third coordinate, z, is extracted. In this case, these values will always be the same for the same song. The final step is to combine the x, y, z coordinates and the times when the next bit occurs. The merging is based on checking the distance between the basic trajectories, if they are too far apart, a point in the trajectory that is in a given range is searched for, and the trajectory is then connected using this point.
+The trajectory is generated using the librosa library. Initially, a long list of basic trajectory sequences is generated using only the x and y coordinates. Among the basic trajectories are various geometric shapes such as rectangles, circles, eights, and segments of sine waves.  The sequence of basic trajectories is always random, but the same figure cannot appear next to each other. Next, the times when the beats will appear are extracted. Then, using the predominant local pulse (PLP), the third coordinate - z, is extracted. In this case, these values will always be the same for the same song. The final step is to combine the x, y, z coordinates and the times when the next bit occurs. The merging is based on checking the distance between the basic trajectories, if they are too far apart, a point in the trajectory that is in a given range is searched for, and the trajectory is then connected using this point.
 
-- Music processing visualization
+- Music processing visualization (30 seconds of song)
 ![qrgfergnoqewrngoqenri](music_processing.png)
 
-- Example generated trajectory
+- Example generated trajectory (60 seconds of song)
 
 
 ![alt text](generated_trajectory.png)
