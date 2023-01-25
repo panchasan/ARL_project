@@ -4,7 +4,7 @@
 
 ### Authors
 - Joanna Wałowska
-- Krzyszztof Nowicki
+- Krzysztof Nowicki
 - Tomasz Kaproń
 
 ### Project purpose
