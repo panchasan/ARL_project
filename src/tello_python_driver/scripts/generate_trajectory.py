@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import librosa.display
-import statistics
-import scipy.stats
+import sys
 import librosa
 import random
 import math
@@ -55,7 +54,7 @@ def find_plp_value(time_p, zm, times):
             break
     return n2
 
-def choose_traj(dic):
+def choose_traj():
     que = []
     fl = 300
     for i in range(800):
@@ -148,12 +147,11 @@ def gen_x_y():
     return dicx, dicy
 
 
-def main():
+def main(args):
     dicx, dicy = gen_x_y()
-    dic = {0: 'figure8', 1: 'circle', 2: 'sin_draw', 3: 'rectangle', 4: 'sin_draw2', 5: 'sin_draw3'}
-    list_of_traj = choose_traj(dic)
+    list_of_traj = choose_traj()
 
-    filename = '/home/chaneu/ARL/ARL_project/librosa-data/audio/Pirates-of-the-Caribbean-Hes-a-Pirate-_Extended_.ogg'
+    filename = str(args[1])
     hop_length = 512
     y, sr = librosa.load(filename, duration = 60)
     tempo, beats = librosa.beat.beat_track(y=y, sr=sr)
@@ -171,12 +169,10 @@ def main():
         z.append(round(librosa.util.normalize(pulse)[num]*2, 4))
 
     x, y = gen_traj(dicx, dicy, list_of_traj, len(z))
-
     save_traj(x, y, z, time_bet)
 
 
-
 if __name__ == '__main__':
-    main()
+    main(sys.argv)
 
 
