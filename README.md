@@ -70,6 +70,7 @@ Every time the container is started with `run.sh` script, it should be followed 
 (foxy) user@machine:~/drone_ws (master #%)$
 ```
 ## Generate the trajectory
+Make sure you are in the folder where python script is.
 ```
 python3 generate_trajectory.py <absolute path to .ogg file>
 ```
@@ -128,10 +129,11 @@ ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'land'}"
 - synchronizing more then one fliyng unit
 
 ## Requrements
-librosa 0.9.2
-python 3.8
-asyncio
-google
-google-api-python-client
-protobuf 3.20.3
-transformations 2018.9.5
+librosa 0.9.2 <br>
+python 3.8 <br>
+asyncio <br>
+google <br>
+google-api-python-client <br>
+protobuf 3.20.3 <br>
+transformations 2018.9.5 <br>
+ 
