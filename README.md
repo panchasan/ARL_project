@@ -122,3 +122,12 @@ ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'land'}"
 
 ### undelivered
 - synchronizing more then one fliyng unit
+
+## Requrements
+librosa 0.9.2
+python 3.8
+asyncio
+google
+google-api-python-client
+protobuf 3.20.3
+transformations 2018.9.5
