@@ -69,6 +69,10 @@ Every time the container is started with `run.sh` script, it should be followed 
 ```
 (foxy) user@machine:~/drone_ws (master #%)$
 ```
+## Generate the trajectory
+```
+python3 generate_trajectory.py <absolute path to .ogg file>
+```
 
 ## Running the demo in Gazebo
 First terminal:
